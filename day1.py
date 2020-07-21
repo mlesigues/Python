@@ -52,4 +52,26 @@ elif n % 2 == 0 and n > 20:
 else:
     exit
 
+#BELOW IS ANOTHER SET OF PROBLEM
+#TASK:
+#The provided code stub reads two integers from STDIN, a and b. Add code to print three lines where:
+#1. The first line contains the sum of the two numbers.
+#2. The second line contains the difference of the two numbers (first - second).
+#3. The third line contains the product of the two numbers.
+    
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+
+#The first line contains the sum of the two numbers.
+x = a + b
+print(x)
+
+#The second line contains the difference of the two numbers (first - second).
+y = a - b
+print(y)
+
+#The third line contains the product of the two numbers.
+z = a * b
+print(z)
  
