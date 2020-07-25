@@ -46,5 +46,44 @@ charsToTest = [9, 6, 1, 2, 3, 4]
 insertionSort(charsToTest)
 print(charsToTest)
 
+print("--------------------------------------------")
+print("--------------------------------------------")
+print("--------------------------------------------")
+
+#recreating my CSE30 lab 2 array1 exercise
+
+#NOTE: THIS IS NOT CORRECT, WILL CORRECT IT SOON!
+
+#familiarizing arrays
+
+#we want to check if an array of numbers input by the user is increasing. This happens if each element of the array contains a value that is larger than the value contained in previous elements.
+
+#First, you should ask the user to enter the size of the array
+userInput = int(input("Enter the size of the array: "))
+
+#If the user enters an incorrect size, you should output the error message 
+if userInput <= 0:
+  print("ERROR: you entered an incorrect value for the array size!")
+  exit
+else:
+  userNumber = []
+  #If the input is a valid size for the array, ask the user to enter the data, by outputting: 
+  userNumber = int(input("Enter the numbers in the array and press enter: "))
+
+  condition = 0
+
+  if (condition == 1):
+    print("This IS an increasing array!")
+  else:
+    print("This is NOT an increasing array!")
+
+
+  #Once the input is complete, check if the array is increasing
+  for i in range(len(userNumber)):
+    #if the current value is less than or equal to the next value, return true
+    if(userNumber[i] <= userNumber[i+1]):
+      condition = 1
+    else:
+      condition = 2
 
 
