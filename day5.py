@@ -11,3 +11,40 @@ if __name__ == '__main__':
     #the end="" prints the number without new lines after each other
     for i in range(1, n+1):
         print (i, end="")
+        
+print("--------------------------------------------")
+print("--------------------------------------------")
+print("--------------------------------------------")
+
+#data structure: insertion sort
+#given an array of numbers, create a function that sorts them from least to greatest
+
+def insertionSort(arrOfChars):
+  #insertion loop 
+  for index in range(1, len(arrOfChars)):
+    #current char to insert
+    cur = arrOfChars[index]
+    #start at previous char 
+    prev = index - 1
+    #while arrOfChars[index] is out of order 
+    while prev >= 0 and (arrOfChars[prev] > cur):
+      #move arrOfChars[prev] to the right
+      arrOfChars[prev + 1] = arrOfChars[prev]
+      #decrement prev by 1
+      prev -= 1
+    
+    #proper place for the cur 
+    arrOfChars[prev + 1] = cur
+
+
+#call function to test
+arrOfChars = [2, 5, 8, 9, 3, 1]
+insertionSort(arrOfChars)
+print(arrOfChars)
+
+charsToTest = [9, 6, 1, 2, 3, 4]
+insertionSort(charsToTest)
+print(charsToTest)
+
+
+
