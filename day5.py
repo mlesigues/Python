@@ -66,24 +66,26 @@ if userInput <= 0:
   print("ERROR: you entered an incorrect value for the array size!")
   exit
 else:
-  userNumber = []
+  userElem = [] #user array
   #If the input is a valid size for the array, ask the user to enter the data, by outputting: 
-  userNumber = int(input("Enter the numbers in the array and press enter: "))
+  print("Enter the elements, press enter each time:")
+    for i in range(0, userInput):
+        element = int(input())
+        #add the elements to the array
+        userElem.append(element)
 
-  condition = 0
-
-  if (condition == 1):
-    print("This IS an increasing array!")
-  else:
-    print("This is NOT an increasing array!")
-
-
-  #Once the input is complete, check if the array is increasing
-  for i in range(len(userNumber)):
-    #if the current value is less than or equal to the next value, return true
-    if(userNumber[i] <= userNumber[i+1]):
-      condition = 1
+    ## Once the input is complete, check if the array is increasing
+    
+    #use all() = generally checks for all the elements fed to it
+    #use zip() = link list beginning from beginning and list beginning from first element, 
+    #             so that a check can be performed on all elements.
+    result = all(i < j for i, j in zip(userElem, userElem[1:]))
+    finalResult = str(result)
+    if (finalResult == True):
+        print("This IS an increasing array")
     else:
-      condition = 2
+        print("This is NOT an increasing array")
+    
+    
 
 
