@@ -3,6 +3,10 @@ for x in range(0, 100):
     if x % 3 == 0:
         print "This number is a multiple of 3: " , x
 
+print("--------------------------------------------------")
+print("--------------------------------------------------")
+print("--------------------------------------------------")   
+      
 #TASK: The provided code stub reads and integer, n, from STDIN. For all non-negative integers
 #i < n, print i^2.
 if __name__ == '__main__':
@@ -16,6 +20,12 @@ if __name__ == '__main__':
            #this is the i^2 part
            x = x*x 
            print(x)
+
+
+print("--------------------------------------------------")
+print("--------------------------------------------------")
+print("--------------------------------------------------")
+
 
 #TASK: Given a year, determine whether it is a leap year. If it is a leap year, 
 #return the Boolean True, otherwise return False.
@@ -41,3 +51,28 @@ def is_leap(year):
 year = int(input())
 print(is_leap(year))
 
+
+print("--------------------------------------------------")
+print("--------------------------------------------------")
+print("--------------------------------------------------")
+
+
+#TASK: Given the participants' score sheet for your University Sports Day, you are required 
+#to find the runner-up score. You are given n scores. Store them in a list and find the score 
+#of the runner-up.
+#input format: The first line contains n. The second line contains an array A[] of n integers 
+#each separated by a space.
+#Constraints: 2 <= n <= 100, -100<=A[i]<=100
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+
+    #sorted the array into decreasing order
+    elem = sorted(arr, reverse=True)
+    #remove duplicates
+    newElem = set(elem)
+    #remove the max
+    newElem.remove(max(newElem))
+    
+    #print nex max
+    print(max(newElem))
