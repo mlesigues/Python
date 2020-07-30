@@ -25,16 +25,23 @@ else:
         #print(userElems.index(findIt))
         break
 
-    #sort the array from high to low
+    #sort the array from low to high
     for i in range(len(userElems)): #will start at index 0
         for j in range(i+1, len(userElems)): #will start at index 1
             if userElems[i] > userElems[j]:
                 userElems[i], userElems[j] = userElems[j], userElems[i]
     
-    a = "Sorted array from highest to lowest: "
+    a = "Sorted array from lowest to highest: "
     b = userElems
     print("{}{}".format(a, b))
 
-
-          
-
+    #sort array from high to low
+    for i in range(len(userElems)):
+        for j in range(len(userElems)):
+            if userElems[j] < userElems[i]:
+                cond = userElems[j]
+                userElems[j] = userElems[i]
+                userElems[i] = cond
+    a = "Sorted array from highest to lowest: "
+    b = userElems
+    print("{}{}".format(a, b))
