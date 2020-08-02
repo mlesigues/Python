@@ -1,8 +1,6 @@
 #TASK: Given a full name, your task is to capitalize the name appropriately.
 #input: s is the full name
 
-
-
 # Complete the solve function below.
 def solve(s):
     #s[0] = s.capitalize()
