@@ -1,8 +1,10 @@
 class Solution:
-#function returns true if the given string is a palindrome, otherwise false empty string as valid palindrome
+#function returns true if the given string is a palindrome, otherwise false empty string as valid palindrome from Leetcode!
     def isPalindrome(self, s: str) -> bool:
         empStr = '' #creates empty string  
-    
+        
+        #src: https://www.cnblogs.com/zuoyuan/p/3765882.html
+        #the given string could be empty! (base case scenario)
         if s == '': 
             return True
         else:
