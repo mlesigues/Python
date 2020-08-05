@@ -1,86 +1,63 @@
 #TASK: Given a full name, your task is to capitalize the name appropriately.
 #input: s is the full name
 
+# Complete the solve function below.
+def solve(s):
+    #s[0] = s.capitalize()
+    #cap = s.capitalize()
+    # for i in len(range(s)):
+    #     if s[i] == " ":
+    #         s[i+1] = s.capitalize()
+    # for i in range(0, len(s)):
+    #     if [s+1] == " ":
+    #         cap = s.capitalize()
+    # strSplit = s.split(" ")
+    # for i in range(0, len(s)):
+    #     i[0] = s.capitalize()
+    #     if s[i] == strSplit:
+    #         if s[i+1] != strSplit:
+    #             s[i+1] = s.capitalize()
+    # return s
 
+    #newString = s
+    #new_string = newString.capitalize()
 
-# # Complete the solve function below.
-# def solve(s):
-#     #s[0] = s.capitalize()
-#     #cap = s.capitalize()
-#     # for i in len(range(s)):
-#     #     if s[i] == " ":
-#     #         s[i+1] = s.capitalize()
-#     # for i in range(0, len(s)):
-#     #     if [s+1] == " ":
-#     #         cap = s.capitalize()
-#     # strSplit = s.split(" ")
-#     # for i in range(0, len(s)):
-#     #     i[0] = s.capitalize()
-#     #     if s[i] == strSplit:
-#     #         if s[i+1] != strSplit:
-#     #             s[i+1] = s.capitalize()
-#     # return s
+    newString = s
+    new_string = ' '.join(map(str.capitalize, newString.split(' ')))
 
-#     #newString = s
-#     #new_string = newString.capitalize()
+    return new_string
 
-#     newString = s
-#     new_string = ' '.join(map(str.capitalize, newString.split(' ')))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-#     return new_string
+    s = input()
 
-# if __name__ == '__main__':
-#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    result = solve(s)
 
-#     s = input()
+    fptr.write(result + '\n')
 
-#     result = solve(s)
-
-#     fptr.write(result + '\n')
-
-#     fptr.close()
+    fptr.close()
 
 #TASK: matrix addition.
 #input: user will input the two arrays => can be converted to matrices
 from array import *
 
-userInput1 = int(input("Enter the length of the 1st array: "))
-userInput2 = int(input("Enter the length of the 2nd array: "))
+#src: https://www.geeksforgeeks.org/take-matrix-input-from-user-in-python/
+userInput_Row = int(input("Enter the number of rows: "))
+userInput_Col = int(input("Enter the number of columns: "))
+print("Enter entries in a single line (press enter after each element): ")
+#result = list(map(int, input("Enter array elements: ").split()))
 result = []
 
-if range(userInput1) != range(userInput2):
-    print("Error: the two arrays are not equal in length!")
-else:
-    #ask to input elements
-    userLength1 = list(map(int, input("Enter 1st array elements, with space: ").split()))
-    userLength2 = list(map(int, input("Enter 2nd array elements, with space: ").split()))
-    #result = [userInput1[userInput2]]
-    #iterate through rows
-    # for i in range(len(userLength1)):
-    #     #iterate through cols
-    #     for j in range(len(userLength1)):
-    #         result[i][j] = userLength1[i][j] + userLength2[i][j]
-    # print(result)
-    #iterate through rows
-    # for i in range(userInput1):
-    #     firstArr = []
-    #     for j in range(userInput2):
-    #         firstArr.append(int(input()))
-    #     result.append(firstArr)
+#putting values into a matrix
+for i in range(userInput_Row):
+    emp = []
+    for j in range(userInput_Col):
+        emp.append(int(input()))
+    result.append(emp)
 
-    # #print 
-    # for i in range(userInput1):
-    #     for j in range(userInput2):
-    #         print(result[i][j], end="")
-    #     print()
-
-    firstArr = []
-    for i in len(range(userLength1)):
-        firstArr.append([i])
-    print (firstArr)
-
-    secondArr = []
-    for j in len(range(userLength2)):
-        secondArr.append([j])
-    print (secondArr)
-
+#print matrix
+for i in range(userInput_Row):
+    for j in range(userInput_Col):
+        print(result[i][j], end=" ")
+    print()
