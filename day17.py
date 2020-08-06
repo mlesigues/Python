@@ -125,3 +125,86 @@ class Trie:
 # obj.insert(word)
 # param_2 = obj.search(word)
 # param_3 = obj.startsWith(prefix)
+
+
+#BELOW IS ERROR TOO! WILL FIX IT ASAP!
+"""
+class Trie:
+    #you may assume that all inputs are consist of lowercase letters, a-z
+    
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        
+        self.trie = {}
+        
+
+    def insert(self, word: str) -> None:
+        """
+        Inserts a word into the trie.
+        """
+        """
+        temp_trie = self.trie
+        for letters in word:
+            if letters not in temp_trie:
+                temp_trie[word] = {}
+            temp_trie = temp_trie[word]
+        temp_trie['#'] = '#'
+        """
+        
+        temp_trie = self.trie
+        for letters in word:
+            temp_trie = temp_trie.setdefault(letters, {})
+        temp_trie['_end_'] = word
+        
+       
+    def search(self, word: str) -> bool:
+        """
+        Returns if the word is in the trie.
+        """
+        
+        return self.startsWith(word + '#')
+        """
+        temp_trie = self.trie
+        
+        for letter in word:
+            if letter in temp_trie:
+                temp_trie = temp_trie[letter]
+            else:
+                return False
+            
+        else:
+            if temp_trie['_end_'] in temp_trie:
+                return True
+            else:
+                return False
+         """ 
+
+    def startsWith(self, prefix: str) -> bool:
+        """
+        Returns if there is any word in the trie that starts with the given prefix.
+        """
+        """
+        temp_trie = self.trie
+        for word in prefix:
+            if word not in temp_trie:
+                return False
+            temp_trie = temp_trie[word]
+        return True           
+        """
+        temp_trie = self.trie
+        
+        for letter in prefix:
+            if letter in temp_trie:
+                temp_trie = temp_trie[letter]
+            else:
+                return False
+        """"    
+        else:
+            if temp_trie['_end_'] in temp_trie:
+                return True
+            else:
+                return False
+        """
+"""
