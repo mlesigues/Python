@@ -69,7 +69,7 @@ class WordDictionary:
 
 #Task: Implement Trie (Prefix Trie)
 class Trie:
-    #you may assume that all inputs are consist of lowercase letters, a-z
+#you may assume that all inputs are consist of lowercase letters, a-z
     
     def __init__(self):
         """
@@ -83,88 +83,30 @@ class Trie:
         """
         Inserts a word into the trie.
         """
-        """
-        temp_trie = self.trie
+        
+        current = self.trie
         for letters in word:
-            if letters not in temp_trie:
-                temp_trie[word] = {}
-            temp_trie = temp_trie[word]
-        temp_trie['#'] = '#'
-        """
+            current = current.setdefault(letters, {})
+        current['_end_'] = word
         
-        temp_trie = self.trie
+    def searchPrefix(self, word: str) -> None:
+        current = self.trie
         for letters in word:
-            temp_trie = temp_trie.setdefault(letters, {})
-        temp_trie['_end_'] = word
-        
-       
-    def search(self, word: str) -> bool:
-        """
-        Returns if the word is in the trie.
-        """
-        
-        return self.startsWith(word + '#')
-          
-
-    def startsWith(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        """
-        temp_trie = self.trie
-        for word in prefix:
-            if word not in temp_trie:
+            if letters not in current:
                 return False
-            temp_trie = temp_trie[word]
-        return True           
-        
-    
-          
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
-
-
-#BELOW IS ERROR TOO! WILL FIX IT ASAP!
-"""
-class Trie:
-    #you may assume that all inputs are consist of lowercase letters, a-z
-    
-    def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        
-        self.trie = {}
-        
-
-    def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie.
-        """
-        """
-        temp_trie = self.trie
-        for letters in word:
-            if letters not in temp_trie:
-                temp_trie[word] = {}
-            temp_trie = temp_trie[word]
-        temp_trie['#'] = '#'
-        """
-        
-        temp_trie = self.trie
-        for letters in word:
-            temp_trie = temp_trie.setdefault(letters, {})
-        temp_trie['_end_'] = word
-        
+            current = current[letters]
+            
+        current['_end_'] = current
+        return current  
        
+        
     def search(self, word: str) -> bool:
         """
         Returns if the word is in the trie.
         """
         
-        return self.startsWith(word + '#')
+        #return self.startsWith(word + '#')
+        
         """
         temp_trie = self.trie
         
@@ -179,7 +121,13 @@ class Trie:
                 return True
             else:
                 return False
-         """ 
+         """
+        
+        #current = self.trie
+        #return self.startsWith(word)
+        contains = self.startsWith(word)
+        return contains is not None
+        
 
     def startsWith(self, prefix: str) -> bool:
         """
@@ -193,6 +141,7 @@ class Trie:
             temp_trie = temp_trie[word]
         return True           
         """
+        """
         temp_trie = self.trie
         
         for letter in prefix:
@@ -200,11 +149,32 @@ class Trie:
                 temp_trie = temp_trie[letter]
             else:
                 return False
-        """"    
+        """
+        """
         else:
             if temp_trie['_end_'] in temp_trie:
                 return True
             else:
                 return False
         """
-"""
+        
+        """
+        current = self.trie
+        for letters in prefix:
+            if letters not in current:
+                return False
+            current = current[letters]
+            
+        current['_end_'] = current
+        return current 
+        """
+        itContains = self.searchPrefix(prefix)
+        return itContains is not None
+
+          
+
+# Your Trie object will be instantiated and called as such:
+# obj = Trie()
+# obj.insert(word)
+# param_2 = obj.search(word)
+# param_3 = obj.startsWith(prefix)
