@@ -14,7 +14,7 @@ class Solution:
         #from gfg: subract each node from the sum when going down, and 
         #check if the sum if 0 when no more subtrees left
         
-        #if run out of tree, return sum is 0/true
+        #root should not be zero
         if not root:
             return False
         else:
