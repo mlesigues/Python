@@ -33,6 +33,7 @@ class Solution:
 
     Then reverse the string and print.
 """
+#src: https://www.geeksforgeeks.org/find-excel-column-name-given-number/
 
 MAX = 50
 
