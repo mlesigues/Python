@@ -1,4 +1,4 @@
-#Task: Iterator for Combination
+#Task: Iterator for Combination from Leetcode
 #src: https://www.youtube.com/watch?v=PmLiLPsb__4
 class CombinationIterator:
     
