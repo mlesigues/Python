@@ -35,6 +35,29 @@ class Solution:
         
         return result
 
+#Task: Two Sum from Leetcode
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        #check for empty list
+        if len(nums) == 0:
+            return 0
+        
+        #brute force approach; 
+        #loop through each element and use subtraction to get the remaining number 
+        
+        seen = {} #store the values to keep track
+        
+        for first, value in enumerate(nums):
+            remaining = target - value
+            
+            if remaining in seen:
+                return [seen[remaining], first]
+            else:
+                seen[value] = first
+            
+            #return []
+    
         
 
         
