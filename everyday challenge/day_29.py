@@ -1,4 +1,4 @@
-#Task:
+#Task: Distribute Candies to People from Leetcode
 #src: https://www.youtube.com/watch?v=IX4iFnEXrhM
 
 class Solution:
