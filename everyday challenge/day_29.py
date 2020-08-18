@@ -1,6 +1,7 @@
 #Task: Distribute Candies to People from Leetcode
 #src: https://www.youtube.com/watch?v=IX4iFnEXrhM
 
+
 class Solution:
     def distributeCandies(self, candies, num_people):
         x = 0
@@ -13,3 +14,21 @@ class Solution:
         
         return candy_list
             
+
+#Task: Single Number from Leetcode
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        check = []
+        
+        for i in nums:
+            if i not in check:
+                check.append(i)
+            else:
+                check.remove(i)
+                
+        return check.pop()
+            
+            
+        
+        
