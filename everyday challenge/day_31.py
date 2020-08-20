@@ -5,8 +5,13 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
         
-        return (s.reverse())
-        
+        return (s.reverse()) #can do it this way
+
+        #another way
+        #src: https://developers.google.com/edu/python/strings
+        #copy the string and then reverse it
+        s[:] = s[::-1]
+        return s[:]
 
 #To Lower Case from Leetcode
 class Solution:
