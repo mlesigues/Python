@@ -50,6 +50,26 @@ class Solution:
                 
         return evenCounter
                 
-            
+#Task: Squares of a Sorted Array (previously answered)
+
+class Solution:
+    def sortedSquares(self, A: List[int]) -> List[int]:
+        #sort it ascending order, and square the elements
+        
+        """
+        elemSquare = []
+        
+        for elems in range(0, len(A)):
+            square = elems ** 2
+            elemSquare.append(square)
+        return elemSquare
+        """
+        
+        squares = [elems ** 2 for elems in A]
+        squares.sort()
+        
+        return squares
+
+        
                 
             
