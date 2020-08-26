@@ -28,5 +28,28 @@ class Solution:
                 maximumOne = max(maximumOne, oneCounter)
                 
         return maximumOne
+
+#Task: Find Numbers with Even Number of Digits from Leetcode
+
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        
+        #some strategies:
+        #convert the element into a string then identify if that element is an even or odd,
+        #increase the evenCounter if that element is even
+        
+        evenCounter = 0
+        
+        #go through the list, and convert it into string
+        for elem in nums:
+            elemToString = str(elem)
+            elemLen = len(elemToString)
+            #check if it is even or odd
+            if elemLen % 2 == 0:
+                evenCounter += 1
+                
+        return evenCounter
+                
+            
                 
             
