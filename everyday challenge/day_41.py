@@ -62,6 +62,20 @@ if __name__ == '__main__':
             res.reverse()
         
         
+#Task: Tuples from Hackerrank
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+    
+    #convert the integer_list into a tuple
+    t = tuple(integer_list)
+
+    #do the hash
+    res = hash(t)
+
+    print (res)
+      
+
 
 
 
