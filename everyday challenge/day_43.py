@@ -17,3 +17,20 @@ class Solution:
                         res = t
         return res
                             
+
+#Task: Swap Case from Hackerrank
+def swap_case(s):
+    #convert lower case to upper case and vice versa
+    curr = ""
+    for elem in s:
+        if elem == elem.upper():
+            curr += elem.lower()
+        else: #instead of doing this: if elem == elem.lower(), just do else
+            curr += elem.upper()
+        
+    return curr
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
