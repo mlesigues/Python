@@ -25,3 +25,21 @@ class Solution:
                     return False
                 
         return True
+
+    
+#Task: Set.add() from Hackerrank
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+totalNum_CountryStamp = int(input())
+"""
+if len(totalNum_CountryStamp) > 0:
+    countryName = input().split('\n')
+
+print(countryName)
+"""
+
+countryName = set()
+
+for elem in range(0, totalNum_CountryStamp):
+    countryName.add(input())
+
+print(len(countryName))
