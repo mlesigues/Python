@@ -21,6 +21,8 @@ final_weighted_mean = round(total, 1)
 print(final_weighted_mean)
 
 
+
+
 #Task: Day: 1 Quartiles from Hackerrank Statistics!
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 import math
@@ -71,3 +73,26 @@ else:
     print(q3)
 
 
+    
+    
+#Task: Day: 1 Standard Deviation from Hackerrank Statistics
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+num_of_elems = int(input())
+#arr_elements = list(map(int,input().split(' ')))
+arr_elements = [int(i) for i in input().split()]
+
+#first, find mean
+mean = sum(arr_elements)/num_of_elems
+
+#then, calculate squared distance from the mean: (arr_elems - mean)^2 for each elements
+squared_distance = []
+for elems in arr_elements:
+    arr_elements = (elems - mean) * (elems - mean)
+    squared_distance.append(arr_elements)
+
+#lastly, square root the sum squared_distance and divide it by num_of_elems 
+total_sum_and_div = sum(squared_distance)/num_of_elems
+std_dev = math.sqrt(total_sum_and_div)
+std_dev = round(std_dev, 1)
+print(std_dev)
