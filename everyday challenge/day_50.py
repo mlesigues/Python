@@ -73,3 +73,22 @@ for x in range(n):
         at_least_two += binom(x, n, p)
 at_least_two = round(at_least_two, 3)
 print(at_least_two)
+
+ 
+    
+    
+#Task: Day 4: Geometric Distribution I
+defects = list(map(int,input().split(' ')))
+n = int(input())
+
+#geometric: g(n,p) = q^(n-1)*p
+def geo(n, p):
+    #q = (1-p)^(n-x), here x would be 1
+    return (1-p)**(n-1)*p
+    
+p = defects[0]/defects[1]
+
+res = geo(n, p)
+res = round(res, 3)
+print(res)
+
