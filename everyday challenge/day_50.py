@@ -93,3 +93,29 @@ res = geo(n, p)
 res = round(res, 3)
 print(res)
 
+
+
+
+#Task: Day 4: Geometric Distribution II
+defects = list(map(int,input().split(' ')))
+n = int(input())
+
+#geometric: g(n,p) = q^(n-1)*p
+def geo(n, p):
+    #q = (1-p)^(n-x), here x would be 1
+    return (1-p)**(n-1)*p
+    
+p = defects[0]/defects[1]
+
+
+#what is the probability that the 1st defect is found during the first 5 inspections
+#so add p(1) + p(2) + ... p(5)
+#note: this is okay for smaller inspections, but what if we have larger numbers?
+
+find_defect = 0
+for x in range(n+1):
+    if x > 0:
+        find_defect += geo(x, p) #note: instead of geo(n,p) it's geo(x, p)! why?
+        
+find_defect = round(find_defect, 3)
+print(find_defect)
