@@ -100,3 +100,29 @@ print(res2)
 
 
 #Task: Day 5: Normal Distribution II
+import math
+
+mean, stdDev = map(int, input().split(' '))
+q1 = int(input())
+threshold = int(input())
+
+#cumulative distribution function (cdf) for normal distribution:
+#Phi_X(x) = 1/2 * (1 + erf(x - mu / sigma sqrt(2)))
+def phi(x, mean, stdDev):
+    
+    sqrt = math.sqrt(2)
+    res = (0.5) * (1 + math.erf( (x - mean) / (stdDev * sqrt) ))
+    return res
+
+#note: need to convert to percentage! so multiply it by 100
+res1 = (1- phi(q1, mean, stdDev)) * 100
+res1 = round(res1, 2)
+print(res1)
+
+res2 = (1- phi(threshold, mean, stdDev)) * 100
+res2 = round(res2, 2)
+print(res2)
+
+res3 = phi(threshold, mean, stdDev) * 100
+res3 = round(res3, 2)
+print(res3)
