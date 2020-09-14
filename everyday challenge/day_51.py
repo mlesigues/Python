@@ -45,7 +45,7 @@ print(result)
 
 
 
-#Task: Day 5: Poisson Disctributio II from Hackerrank
+#Task: Day 5: Poisson Distribution II from Hackerrank
 values = list(map(float, input().split(' ')))
 
 A_mean = values[0]
@@ -99,7 +99,7 @@ print(res2)
 
 
 
-#Task: Day 5: Normal Distribution II
+#Task: Day 5: Normal Distribution II from Hackerrank
 import math
 
 mean, stdDev = map(int, input().split(' '))
