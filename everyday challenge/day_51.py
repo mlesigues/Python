@@ -21,7 +21,7 @@ class Solution:
 
         
         
-#Task: Day 5: Poisson Distribution from Hackerrank
+#Task: Day 5: Poisson Distribution I from Hackerrank
 import math
 x_mean = float(input())
 want_probs = int(input())
@@ -45,7 +45,7 @@ print(result)
 
 
 
-#Task: Day 5:
+#Task: Day 5: Poisson Disctributio II from Hackerrank
 values = list(map(float, input().split(' ')))
 
 A_mean = values[0]
@@ -63,3 +63,40 @@ print(A_operation)
 B_operation = 128 + 40 * (B_mean + B_mean**2)
 B_operation = round(B_operation, 3)
 print(B_operation)
+
+
+
+
+#Task: Day 5: Normal Distribution I from Hackerrank
+import math
+
+values = list(map(int, input().split(' ')))
+X_mean = values[0]
+X_std_dev = values[1]
+question1 = float(input())
+question2 = list(map(int, input().split(' ')))
+q2_lower_range = question2[0]
+q2_upper_range =question2[1]
+
+
+#cumulative distribution function (cdf) for normal distribution:
+#Phi_X(x) = 1/2 * (1 + erf(x - mu / sigma sqrt(2)))
+def phi(x, mean, stdDev):
+    
+    sqrt = math.sqrt(2)
+    res = (0.5) * (1 + math.erf( (x - mean) / (stdDev * sqrt) ))
+    return res
+
+
+res1 = phi(question1, X_mean, X_std_dev)
+res1 = round(res1, 3)
+print(res1)
+
+res2 = phi(q2_upper_range, X_mean, X_std_dev) - phi(q2_lower_range, X_mean, X_std_dev)
+res2 = round(res2, 3)
+print(res2)
+
+
+
+
+#Task: Day 5: Normal Distribution II
