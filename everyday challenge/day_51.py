@@ -46,3 +46,20 @@ print(result)
 
 
 #Task: Day 5:
+values = list(map(float, input().split(' ')))
+
+A_mean = values[0]
+B_mean = values[1]
+
+#cost of A operation: 160+40X^2; 
+#X^2 would be change to A_mean + A_mean^2
+#why? because this: https://www.hackerrank.com/challenges/s10-poisson-distribution-2/forum/comments/293964
+A_operation = 160 + 40 * (A_mean + A_mean**2)
+A_operation = round(A_operation, 3)
+print(A_operation)
+
+#cost of B operation: 128+40Y^2
+#Y^2 would be change to B_mean + B_mean^2
+B_operation = 128 + 40 * (B_mean + B_mean**2)
+B_operation = round(B_operation, 3)
+print(B_operation)
