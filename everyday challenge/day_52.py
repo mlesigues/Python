@@ -40,7 +40,7 @@ class Solution:
 
         
         
-#Task: Day 6: The Central Limit I from Hackerrank
+#Task: Day 6: The Central Limit Theorem I from Hackerrank
 import math
 
 maxWeight_elevator = int(input()) #total number of 'trial', x
@@ -67,7 +67,7 @@ print(res)
 
 
 
-#Task: Day 6: The Central Limit Theory II
+#Task: Day 6: The Central Limit Theorem II
 import math
 
 last_min_tickets = int(input())
@@ -94,3 +94,28 @@ print(res)
 
 res = round(phi(last_min_tickets, sample_mean_sum, sample_std_dev), 4)
 print(res)
+
+
+
+
+#Task: Day 6: The Central Limit Theorem III
+import math
+
+sample_size = int(input())
+mean = int(input())
+stdDev = int(input())
+dist_percent = float(input()) #as decimal
+z_value = float(input()) #z score
+
+#why this? because: https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-3/forum/comments/179271
+sample_std_dev = stdDev / math.sqrt(sample_size) 
+
+#value of A; lower limit? (both A & B are symmetrical)
+A = mean - z_value * sample_std_dev
+A = round(A, 2)
+print(A)
+
+#value of B; upper limit?
+B = mean + z_value * sample_std_dev
+B = round(B, 2)
+print(B)
