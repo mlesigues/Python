@@ -37,3 +37,29 @@ class Solution:
         
         return current
         """
+
+        
+        
+#Task: Day 6: The Central Limit I from Hackerrank
+import math
+
+maxWeight_elevator = int(input()) #total number of 'trial', x
+num_boxes = int(input()) #this would be the sample size, n
+mean_weight = int(input()) #mean, mu
+stdDev = int(input()) #standard deviation, sigma
+
+sample_mean_sums = num_boxes * mean_weight
+sample_std_dev = math.sqrt(num_boxes) * stdDev
+
+#cumulative distribution function (cdf) for normal distribution:
+#Phi_X(x) = 1/2 * (1 + erf(x - mu / sigma sqrt(2)))
+def phi(x, mean, stdDev):
+    
+    sqrt = math.sqrt(2)
+    res = (0.5) * (1 + math.erf( (x - mean) / (stdDev * sqrt) ))
+    return res
+
+
+res = phi(maxWeight_elevator, sample_mean_sums, sample_std_dev)
+res = round(res, 4)
+print(res)
