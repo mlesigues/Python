@@ -63,3 +63,34 @@ def phi(x, mean, stdDev):
 res = phi(maxWeight_elevator, sample_mean_sums, sample_std_dev)
 res = round(res, 4)
 print(res)
+
+
+
+
+#Task: Day 6: The Central Limit Theory II
+import math
+
+last_min_tickets = int(input())
+students_waiting = int(input())
+mean_purchased_tickets = float(input())
+std_dev = float(input())
+
+sample_mean_sum = students_waiting * mean_purchased_tickets 
+sample_std_dev = math.sqrt(students_waiting) * std_dev
+
+#cumulative distribution function (cdf) for normal distribution:
+#Phi_X(x) = 1/2 * (1 + erf(x - mu / sigma sqrt(2)))
+def phi(x, mean, stdDev):
+    
+    sqrt = math.sqrt(2)
+    res = (0.5) * (1 + math.erf( (x - mean) / (stdDev * sqrt) ))
+    return res
+
+"""
+res = phi(last_min_tickets, sample_mean_sum, sample_std_dev)
+res = round(res, 4)
+print(res)
+"""
+
+res = round(phi(last_min_tickets, sample_mean_sum, sample_std_dev), 4)
+print(res)
