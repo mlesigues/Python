@@ -17,3 +17,4 @@ class Solution:
                 max_end_here = 0
                 
         return max_so_far
+#src: https://www.quora.com/Why-are-sub-array-problems-so-hard-to-solve-What-are-some-tricks-to-solve-it-in-O-n
