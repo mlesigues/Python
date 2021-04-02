@@ -1,23 +1,44 @@
-#Check If Two String Arrays are Equivalent from Leetcode
+'''
+From Crack the Coding Interview (CTCI) Ch. 1 Arrays and Strings
+Implement an algorithm to determine if a string has all unique characters. What if you can not
+use additional data structures?
+'''
 
-/*
-Given two string arrays word1 and word2, return true if the two arrays represent the same string, and false otherwise.
+def chars_unique(words):
+    #read the given words, then identify their values using ord
+    #since 'a' is not the same as 'A'
+    #find if any of those values are repeating, we can use set and 
+    #compare the length of set by the store_vals
 
-A string is represented by an array if the array elements concatenated in order forms the string.
-*/
+    store_vals = []
+    uniq = set()
 
-class Solution:
-    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
-        #all lowercase
-        
-        #thinking: add all the string in word1, do the same for word2
-        #compare each element in word1 into word2, if the placing of 
-        #the strings are the same, return true, else false
-        
-        temp1 = "".join(word1)
-        temp2 = "".join(word2)
-        
-        if temp1 == temp2:
-            return True
-        else:
-            return False
+    for letter in words:
+        val = ord(letter)
+        #after knowing the values, store those values
+        store_vals.append(val)
+        #also add on the set
+        uniq.add(val)
+    
+    print (store_vals)
+    #print(uniq)
+
+    #now convert uniq into a list, then compare its length to store_vals
+    uniq_l = list(uniq)
+    print(uniq_l)
+    if len(uniq_l) == len(store_vals):
+        print("these characters are unique")
+    else:
+        print("these characters are not unique")
+
+#tester func
+def testing(string_input):
+    chars_unique(string_input)
+
+
+#call here
+if __name__ == '__main__':
+
+    words = ['b', 'B', 'a']
+    testing(words)
+    #chars_unique(words)
