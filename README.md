@@ -5,4 +5,4 @@ In the process of organizing the files.
 
 # Python Tasks for CS131B at CCSF
 
-Under the folder named 'CS131B' stores all of my tasks for CS131B. Some 'Week' may have more than 1 solution to show a clearer code.
+Under the folder named 'CS131B' stores all of my tasks for CS131B. Some assignment may have more than 1 solution to show a clearer code.
