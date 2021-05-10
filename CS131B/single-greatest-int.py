@@ -8,7 +8,7 @@ import re
 #looks for the single greatest integer in Urantia and prints it
 def greatestInt():
     #open file
-    fname = '/Users/mariellelesigues/Desktop/CS131B-Prog Fundamentals Python/readTxt.txt'
+    fname = '/users/.../.../urantia.txt' #change the file path to whatever needed
 
     #src: https://developers.google.com/edu/python/regular-expressions
     fileOpen = open(fname, "r")
@@ -19,8 +19,6 @@ def greatestInt():
 
     #change the elements in justItnt -> ints
     justInts = [int(elem) for elem in justInt]
-
-    #print(justInt)
 
     #after finding all integers, get the biggest/largest integer
     maxElem = max(justInts)
@@ -35,19 +33,3 @@ def greatestInt():
 #main funct
 if __name__ == '__main__':
     greatestInt()
-    
-
-# #open file
-# fname = '/Users/mariellelesigues/Desktop/CS131B-Prog Fundamentals Python/readTxt.txt'
-
-# #src: https://developers.google.com/edu/python/regular-expressions
-# fileOpen = open(fname, "r")
-
-# #using regex, find all the integers and store it in justInt list
-# justInt = re.findall(r'[0-9]+', fileOpen.read())
-# print(justInt)
-
-# #after finding all integers, get the biggest/largest integer
-# maxElem = max(justInt)
-
-# print("The single greatest integer in Urantia is: ", maxElem)
