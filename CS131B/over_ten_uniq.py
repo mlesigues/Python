@@ -1,6 +1,6 @@
 '''
 Write a program that shows ten unique random words, all over ten characters long, that occur in the text 
-/users/abrick/resources/urantia.txt
+/users/.../.../urantia.txt
 '''
 # -*- coding: utf-8 -*-
 import string
@@ -56,7 +56,7 @@ def random_words(valid_words):
 
 if __name__ == '__main__':
     #open file
-    fname = '/Users/mariellelesigues/Desktop/CS131B-Prog Fundamentals Python/readTxt.txt'
+    fname = '/users/.../.../urantia.txt'
     try:
         fhand = open(fname)
         print("File is now open.")
@@ -73,50 +73,3 @@ if __name__ == '__main__':
     fhand.close()
     print("The file is now closed.")
 
-
-'''
-# #split the text into words
-# counts = dict()
-# for line in fhand:
-#     line = line.rstrip().strip() #remove newlines and whitespaces
-#     line = line.translate(line.maketrans('', '', string.punctuation)) #remove punctuations
-#     line = line.lower()
-#     words = line.split() #or split(' ') ?
-#     for word in words:
-#         if word not in counts:
-#             counts[word] = 1
-#         else:
-#             counts[word] += 1
-# #print(counts)
-# print('==============================================')
-
-# uniq_words = set() #put words in the set so it'll remove the duplicates
-# for key, value in counts.items():
-#     uniq_words.add(key)
-
-# #print(uniq_words)
-# #print(len(uniq_words))
-
-# word_count = []
-# word_len = [] #contains the more than or equal to 10 character words
-# #using the set, check for the words that has more than 10 characters
-# for element in uniq_words:
-#     char_len = len(element) #looks for the character length
-#     word_count.append(char_len)
-#     if char_len >= 10:
-#         word_len.append(element)
-
-# #print(word_count)
-# #print(word_len)
-# print(len(word_len))
-
-# #only show 10 random words from the word_len list (we can use random funct here)
-# rand_words = random.sample(word_len, 10)
-# print("Here are the 10 random unique words: ",rand_words, sep=",")
-
-
-# fhand.close()
-# print("The file is now closed.")
-
-
-'''
