@@ -76,3 +76,69 @@ while count < 2: #if we don't put 2 here, just 1 it only makes an "L" shape
   turtle.left(90)
   count = count + 1
   
+#============================================
+  
+#task 4: squares or more likely Squareception.
+
+#reuse the code before but we will need to make a function or 
+#a group of related statements that do a specific task when called
+def squareCeption(userSize):
+  count = 0
+  while count < 4:
+    turtle.forward(userSize)
+    turtle.left(90)
+    count = count + 1
+    
+    
+#enter the "main" stuff below 
+squareCeption(10)
+squareCeption(30)
+squareCeption(50)
+squareCeption(70)
+
+#============================================
+
+#task 4: tilted squares. Hint: we will reuse the previous funtion that we did
+#titled squares
+#reuse the code before
+def squareCeption(userSize):
+  count = 0
+  while count < 4:
+    turtle.forward(userSize)
+    turtle.left(90)
+    count = count + 1
+    
+
+#enter the "main" stuff below 
+turtle.left(10)
+squareCeption(50)
+
+turtle.left(20)
+squareCeption(50)
+
+turtle.left(30)
+squareCeption(50)
+
+
+#============================================
+#can we change the colors? sure!
+#we will change the pen color
+turtle.pencolor("blue")
+
+#then draw the square, just call the function!
+squareCeption(50)
+
+#task 5: draw the tilted squares but with different colors
+#tilted square but with diffent squares
+turtle.pencolor("red")
+turtle.left(10)
+squareCeption(50)
+
+turtle.pencolor("blue")
+turtle.left(20)
+squareCeption(50)
+
+turtle.pencolor("green")
+turtle.left(30)
+squareCeption(50)
+turtle.pencolor("yellow")
