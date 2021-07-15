@@ -57,3 +57,22 @@ turtle.forward(50)
 
 #============================================
 
+#task 2: draw a square BUT use LOOPS!
+count = 0
+while count < 4:
+  turtle.forward(50)
+  turtle.left(90)
+  count = count + 1
+  
+#============================================
+
+#task 3: draw a rectangle. Length = 100, Width = 50.
+count = 0
+
+while count < 2: #if we don't put 2 here, just 1 it only makes an "L" shape
+  turtle.forward(100)
+  turtle.left(90)
+  turtle.forward(50)
+  turtle.left(90)
+  count = count + 1
+  
