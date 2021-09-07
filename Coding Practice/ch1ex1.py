@@ -14,3 +14,6 @@ def noDups(word):
 
 word = "cat"
 noDups(word)
+
+#link for clarification: https://stackoverflow.com/questions/17357370/implementing-an-algorithm-to-determine-if-a-string-has-all-unique-characters
+#used paper then hand coded it
